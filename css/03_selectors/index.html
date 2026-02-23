@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+        }
+        /* universel selector */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* type  selector*/
+          h1{
+           margin: 2rem 3rem;
+          }
+        /* class selector */
+          .sub-heading{
+            padding: 2rem;
+          }
+        /* id selector */
+          #header{
+            color: aqua;
+          }
+        /* attribute selector */
+        input[type = 'text']{
+                border: 1px solid red;
+        }
+        /*  Descendent Selector*/
+         article p {
+            color: blueviolet;
+         }
+        /* child selector */
+         div > p{
+            color: chocolate;
+         }
+         /* phseudo class selector */
+         h1:hover{
+            color: red;
+         }
+         /* phseudo eliment selector */
+         #header::first-letter{
+          color: chartreuse;
+         }
+         /* grouping selector */
+         h1,h2{
+            background-color: brown;
+         }
+    </style>
+</head>
+<body>
+    <header id="header">welcome to the page</header>
+    <h1>main heading</h1>
+    <form action="">
+        <input type="text">
+    </form>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta soluta libero voluptatum!</p>
+    </div>
+    <article>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, ut?</p>
+    </article>
+    <a href="#">click to see</a>
+    <h3 class="sub-heading">sub heading</h3>
+</body>
+</html>
