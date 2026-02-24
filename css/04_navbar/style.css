@@ -48,6 +48,7 @@ body{
     width: 200px;
 }
 .nav2 ul {
+    margin: 0;
     padding: 1rem;
     background-color: green;
     display: block;
@@ -63,10 +64,70 @@ body{
     background-color: rgba(128, 0, 0, 0.321);
 }
 .nav2 .login-btn{
+    width: 100%;
     text-decoration: none;
     color: #fff;
     background-color: red;
     padding: .2rem 1rem;
     border: 1px solid yellow;
-    margin-left: .8rem;
+}
+/* Variation 3 */
+.nav3 ul{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   background-color: aliceblue;
+   padding: .8rem;
+}
+.nav3 li{
+  display: inline;
+}
+.nav3 a{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    padding: .5rem .8rem;
+}
+.nav3 a::after{
+    position: absolute;
+     content: '';
+     border-bottom: 2px solid blue;
+     height: 2px;
+     width: 100%;
+     bottom: 0;
+     right: 0;
+     transform: scaleX(0);
+     transition: all .3s ease-in-out;
+}
+.nav3 a:hover::after{
+      transform: scaleX(1);
+}
+.nav3 .login-btn{
+    text-decoration: none;
+    color: #fff;
+    background-color: red;
+    padding: .5rem .8rem;
+    border: none;
+}
+.dropdwon{
+    position: relative;
+}
+.dropdwon-content{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: aquamarine;
+    visibility: hidden;
+    opacity: 0;
+    transform:translateY(-1rem) ;
+    transition: all .3s ease;
+}
+.dropdwon:hover .dropdwon-content{
+    visibility: visible;
+    opacity: 1;
+    transform:translateY(0) ;
 }
