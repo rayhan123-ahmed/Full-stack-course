@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>grid master class</title>
+</head>
+<body>
+    <h1>CSS grid master class demo</h1>
+    <div class="container">
+        <h1>1.Basic grid (3*3)</h1>
+    <div class="grid-container" 
+    style="grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,100px);
+    ">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+    </div>
+    </div>
+    <div class="container">
+        <h1>2.Grid with different coulmn sizes</h1>
+    <div class="grid-container" style="grid-template-columns:1fr 2fr 1fr;">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    </div>
+
+    <div class="container">
+        <h1>3.Grid with gaps</h1>
+    <div class="grid-container" style="grid-template-columns:1fr 2fr 1fr; gap: 2rem;">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    </div>
+
+    <div class="container">
+        <h1>4.Grid placement</h1>
+    <div class="grid-container" style="grid-template-columns: repeat(3,1fr);">
+        <div class="box" style="grid-column: 1/3;">1</div>
+        <div class="box">2</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box" style="grid-column: 1/3;">6</div>
+    </div>
+    </div>
+
+    <div class="container">
+        <h1>5.Grid tamplates area</h1>
+    <div class="grid-container"
+     style="grid-template-areas: 'header header header' 'sidebar main main' 'footer footer footer';"
+    >
+        <div class="box" style="grid-area: header;">header</div>
+        <div class="box" style="grid-area: sidebar;">sidebar</div>
+        <div class="box" style="grid-area: main;">main content</div>
+        <div class="box" style="grid-area: footer;">footer</div>
+    </div>
+    </div>
+   
+    <div class="container">
+        <h1>6.Auto fit mix</h1>
+    <div class="grid-container " style="grid-template-columns: repeat(auto-fit,
+     minmax(100px,1fr)
+    );">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    </div>
+
+    <div class="container">
+        <h1>7.Nasted grid</h1>
+    <div class="grid-container " style="grid-template-columns: 1fr 1fr; justify-content: center; ">
+        <div class="box">1</div>
+        <div class="grid-container" style="grid-template-columns: 1fr 1fr; align-items: center; justify-content: center;">
+        <div class="box">2</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        </div>
+      
+    </div>
+    </div>
+</body>
+</html>
