@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript fun example</title>
+    <style>
+        body{
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+        .highlight{
+            background-color: yellow;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+        .hidden{
+            display: none;
+        }
+       ul{
+        list-style: none;
+       }
+    </style>
+</head>
+<body>
+    <h1>Javascript DOm fun examples</h1>
+    <!-- example 1: Accesing DOM elements -->
+    <section id="example-1">
+        <h2 class="highlight">Accesing DOM elemnts</h2>
+        <p id="myPeragraph">
+          This is peragraph. Click Button to chnage me
+        </p>
+        <button id="changeTextButton">Change text</button>
+    </section>
+    <!-- example 2: Terversing the DOM -->
+     <section id="example-2">
+        <h2>Terversing the DOM</h2>
+        <ul id="citiList">
+            <li>Dhaka</li>
+            <li>New york</li>
+            <li>Paris</li>
+            <li>London</li>
+        </ul>
+        <button id="highlightFirstCity">Highlight First City</button>
+     </section>
+     <!-- example 3: Manipulating DOM element -->
+      <section id="example-3">
+        <h2>Manipulating DOM element</h2>
+        <div id="coffeOrder">Order: <span id="coffeType">
+          latte
+        </span>
+    </div>
+    <button id="changeOrder">Change order to espresso</button>
+      </section>
+      <!-- example 4: Creating Inserting Elemnets -->
+       <section id="example-4">
+         <h2>Creating Inserting Elemnets</h2>
+         <button id="addNewIteam">Add a new item to the shopping list</button>
+         <ul id="shoppingList">
+            <li>Brand</li>
+            <li>Milk</li>
+         </ul>
+       </section>
+       <!-- example 5: Remove DOM elements Elemnets -->
+        <section id="example-4">
+         <h2>Remove DOM elements Elemnets</h2>
+         <ul id="taskList">
+           <li>TAsk 1</li>
+           <li>TAsk 2</li>
+           <li>TAsk 3</li>
+         </ul>
+         <button id="removeList">Remove list</button>
+        </section>
+    <script src="script.js"></script>
+</body>
+</html>
