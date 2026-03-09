@@ -43,3 +43,39 @@ const removeList = document.getElementById("removeList");
 removeList.addEventListener("click", () => {
     taskList.lastElementChild.remove()
 });
+// Example 6
+const clickMeButton = document.getElementById("clickMeButton");
+clickMeButton.addEventListener('click',()=>{
+    alert('hey')
+})
+// Example 7
+const teaList = document.getElementById('teaList')
+
+teaList.addEventListener('click',(event)=>{
+   if (event.target && event.target.matches(".teaItem")) {
+    alert(`you selected: `+ event.target.textContent)
+   } 
+})
+// Example 8
+const feedbackForm = document.getElementById("feedbackForm");
+let feedbackInput = document.getElementById("feedbackInput");
+let displayFeedback = document.getElementById("displayFeedback");
+
+feedbackForm.addEventListener('submit',(Event)=>{
+    Event.preventDefault();
+    let feedback = feedbackInput.value
+    displayFeedback.textContent = `FeedBack is: ${feedback}`;
+})
+// Example 9
+let domStatus = document.getElementById("domStatus");
+
+document.addEventListener('DOMContentLoaded',()=>{
+     domStatus.textContent = "DOM Fully Loaded";
+})
+// Example 10
+let toggleBtn = document.getElementById("toggleHighlight");
+let desText = document.getElementById("descriptionText");
+
+toggleBtn.addEventListener('click',()=>{
+    desText.classList.toggle("highlight");
+})
