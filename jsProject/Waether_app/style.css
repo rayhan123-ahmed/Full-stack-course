@@ -52,7 +52,13 @@ input[type="text"]:focus {
     background-color: #5115ac;
  transition:all .2s ;
 }
+.weather-info{
+  margin-top: 20px;
+}
 .hidden{
     display: none;
 }
-
+#error-massage{
+  color: #ff5724;
+  margin-top: 20px;
+}
