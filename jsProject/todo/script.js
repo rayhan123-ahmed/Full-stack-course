@@ -15,15 +15,34 @@ document.addEventListener('DOMContentLoaded',()=>{
         isCompleted: false,
       };
       tasks.push(newTask);
+      renderTask(newTask);
       saveTask();
       todoInput.value = "";
       console.log(tasks);
     });
 
     function renderTask(task) {
-      console.log(task);
-    }
+    const li = document.createElement('li')
+    li.dataset.id = task.id;
 
+    li.innerHTML = `
+     <span>${task.text}</span>
+     <button class = "delete-btn">Delete</button>
+    `;
+    todoList.append(li)
+    }
+    
+    todoList.addEventListener('click',(e)=>{
+      if(e.target.classList.contains('delete-btn')){
+        const li = e.target.parentElement
+        const id = Number(li.dataset.id)
+
+        tasks = tasks.filter(task => task.id != id)
+         saveTask()
+         li.remove()
+      }
+    })
+  
     function saveTask() {
       localStorage.setItem("task", JSON.stringify(tasks));
     }
