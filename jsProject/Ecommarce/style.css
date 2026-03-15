@@ -27,29 +27,38 @@ h1{
     justify-content: center;
     padding: 1rem;
 }
-#todo-input{
-  border: none;
-  color: #FFFFFF;
-  border: 1px solid #4C4A7A;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: .5rem;
-  padding: .7rem 1.2rem;
-}
-input[type="text"]:focus {
-  outline: none;
-  border-color: #7C7BFF;
+#product-list{
+  margin-bottom: 30px;
 } 
-.prodcut button{
+.product{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 10px 15px;
+    background-color: #222;
+    border-radius: 5px;
+}
+.product span{
+  font-size: 15px;
+}
+.product button{
   background-color: #6200ea;
   border: none;
+  font-size: 15px;
   padding: 5px 10px;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 } 
-.prodcut button:hover{
+.product button:hover{
   background-color: #3700b3;
+}
+.shp-cart{
+  margin-bottom: 15px;
+  font-size: 25px;
 }
 #cart-total{
   text-align: right;

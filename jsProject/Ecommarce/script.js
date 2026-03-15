@@ -11,3 +11,13 @@ const products = [
     {id:3, name:'product 3', price:9.99}
 ]
 const cart = []
+
+products.forEach((product)=>{
+    const productDiv = document.createElement('div');
+    productDiv.classList.add("product");
+    productDiv.innerHTML = `
+    <span>${product.name} - ${product.price.toFixed(2)}</span>
+    <button data-id="${product.id}">Add to cart</button>
+    `;
+    productList.appendChild(productDiv)
+})
