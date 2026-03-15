@@ -38,8 +38,34 @@ h1{
 input[type="text"]:focus {
   outline: none;
   border-color: #7C7BFF;
+} 
+.prodcut button{
+  background-color: #6200ea;
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+} 
+.prodcut button:hover{
+  background-color: #3700b3;
+}
+#cart-total{
+  text-align: right;
+}
+#cheackout-btn{
+  background-color: #6200ea;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#cheakout-btn:hover{
+  background-color: #3700b3 ;
 }
 .hidden{
   display: none;
 }
-
