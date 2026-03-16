@@ -2,7 +2,7 @@ const productList = document.getElementById("product-list");
 const cartItems = document.getElementById("cart-items");
 const emptyCard = document.getElementById("empty-card");
 const cardTotal = document.getElementById("cart-total");
-const totalPrice = document.getElementById("total-price");
+const totalPriceDisplay = document.getElementById("total-price");
 const cheackoutBtn = document.getElementById("cheackout-btn");
 
 const products = [
@@ -32,10 +32,35 @@ productList.addEventListener('click',(e)=>{
 
 function addToCart(product) {
     cart.push(product)
-    console.log(product);
     renderCart();
 }
 
 function renderCart() {
-    cartItems.innerText = ''
+    cartItems.innerText = '';
+   let totalPrice = 0
+
+   if (cart.length > 0) {
+      emptyCard.classList.add("hidden");
+      cardTotal.classList.remove('hidden');
+
+      cart.forEach((item,index)=>{
+        totalPrice+= item.price;
+        const cartItem = document.createElement('div');
+        cartItem.innerText = `
+         ${item.name} - $${item.price.toFixed(2)}
+        `
+
+        cartItems.appendChild(cartItem);
+        totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`;
+      })
+
+   } else {
+      emptyCard.classList.remove("hidden");
+       totalPriceDisplay.textContent = `$0.00`;
+   }
 }
+
+cheackoutBtn.addEventListener('click',()=>{
+    cart.length = 0
+    renderCart();
+})

@@ -72,8 +72,11 @@ h1{
   cursor: pointer;
   transition: background-color 0.3s;
 }
-#cheakout-btn:hover{
+#cheackout-btn:hover{
   background-color: #3700b3 ;
+}
+#cart-total p{
+  padding: 14px;
 }
 .hidden{
   display: none;
