@@ -33,7 +33,7 @@ form{
   justify-content: space-between;
   margin-bottom: 20px;
 }
-#cheackout-btn{
+.sumbit{
   background-color: #6200ea;
   border: none;
   padding: 10px;
@@ -42,11 +42,14 @@ form{
   cursor: pointer;
   transition: background-color 0.3s;
 }
-#cheackout-btn:hover{
+.sumbit:hover{
   background-color: #3700b3 ;
 }
-#cart-total p{
-  padding: 14px;
+input{
+  font-size: 15px;
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 5px;
 }
 .hidden{
   display: none;
@@ -58,4 +61,19 @@ form{
   outline: none;
   padding: 5px;
   border-radius: 5px;
+}
+.list {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    text-align: center;
+    padding: 9px;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 11px;
+    margin-bottom: 5px;
+}
+#total{
+  font-size: 15px;
+  padding: 15px;
 }
