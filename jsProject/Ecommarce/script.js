@@ -3,7 +3,7 @@ const cartItems = document.getElementById("cart-items");
 const emptyCard = document.getElementById("empty-card");
 const cardTotal = document.getElementById("cart-total");
 const totalPriceDisplay = document.getElementById("total-price");
-const cheackoutBtn = document.getElementById("cheackout-btn");
+const checkoutBtn = document.getElementById("cheackout-btn");
 
 const products = [
     {id:1, name:'product 1', price:29.99},
@@ -47,9 +47,7 @@ function renderCart() {
         totalPrice+= item.price;
         const cartItem = document.createElement('div');
         cartItem.innerText = `
-         ${item.name} - $${item.price.toFixed(2)}
-        `
-
+         ${item.name} - $${item.price.toFixed(2)}`;
         cartItems.appendChild(cartItem);
         totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`;
       })
@@ -60,7 +58,7 @@ function renderCart() {
    }
 }
 
-cheackoutBtn.addEventListener('click',()=>{
-    cart.length = 0
-    renderCart();
-})
+checkoutBtn.addEventListener("click", () => {
+  cart.length = 0;
+  renderCart();
+});
