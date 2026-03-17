@@ -46,16 +46,32 @@ function renderCart() {
       cart.forEach((item,index)=>{
         totalPrice+= item.price;
         const cartItem = document.createElement('div');
-        cartItem.innerText = `
-         ${item.name} - $${item.price.toFixed(2)}`;
+        cartItem.classList.add('cart-list')
+        cartItem.innerHTML = `
+        <span>${item.name} - $${item.price.toFixed(2)}</span> 
+         <button class="delete-btn" data-index="${index}">Delete</button>
+         `;
+
         cartItems.appendChild(cartItem);
         totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`;
       })
 
    } else {
       emptyCard.classList.remove("hidden");
-       totalPriceDisplay.textContent = `$0.00`;
+      totalPriceDisplay.textContent = `$0.00`;
    }
+}
+
+cartItems.addEventListener('click',(e)=>{
+    if (e.target.classList.contains("delete-btn")) {
+        const index = e.target.getAttribute("data-index");
+        removeFromeCarts(index)
+    }
+})
+
+function removeFromeCarts(index) {
+    cart.splice(index,1)
+    renderCart()
 }
 
 checkoutBtn.addEventListener("click", () => {

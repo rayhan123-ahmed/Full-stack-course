@@ -81,3 +81,17 @@ h1{
 .hidden{
   display: none;
 }
+.cart-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}
+.delete-btn{
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+}
