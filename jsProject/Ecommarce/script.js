@@ -65,11 +65,11 @@ function renderCart() {
 cartItems.addEventListener('click',(e)=>{
     if (e.target.classList.contains("delete-btn")) {
         const index = e.target.getAttribute("data-index");
-        removeFromeCarts(index)
+        removeFromCarts(index)
     }
 })
 
-function removeFromeCarts(index) {
+function removeFromCarts(index) {
     cart.splice(index,1)
     renderCart()
 }

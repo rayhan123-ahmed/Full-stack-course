@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+body{
+  background: black;
+  color: #ffff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 13px;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+ul{
+    list-style: none;
+}
+.container {
+    background-color: #333;
+    padding: 2rem;
+    border-radius: .5rem;
+}
+h1,
+h2,
+h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+form{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#cheackout-btn{
+  background-color: #6200ea;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#cheackout-btn:hover{
+  background-color: #3700b3 ;
+}
+#cart-total p{
+  padding: 14px;
+}
+.hidden{
+  display: none;
+}
+.delete-btn{
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+}
