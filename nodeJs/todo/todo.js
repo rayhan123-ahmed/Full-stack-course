@@ -33,6 +33,23 @@ const listTask = ()=>{
   )
 }
 
+const removeTask = (index) =>{
+    const tasks = loadTask();
+
+    const realIndex = index -1;
+    
+    if (realIndex < 0 || realIndex >= tasks.length) {
+        console.log('invalid task number');
+        return
+    }
+
+    const remove = tasks.splice(realIndex,1);
+    saveTask(tasks);
+
+    console.log('Removed',remove[0].task);
+    
+}
+
 // const command = process.argv[2]
 // const argument = process.argv[3];
 
