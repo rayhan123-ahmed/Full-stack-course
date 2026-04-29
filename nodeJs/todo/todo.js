@@ -33,8 +33,10 @@ const listTask = ()=>{
   )
 }
 
-const command = process.argv[2]
-const argument = process.argv[3];
+// const command = process.argv[2]
+// const argument = process.argv[3];
+
+const [, , command, argument] = process.argv;
 
 if (command === 'add') {
     addTask(argument)
