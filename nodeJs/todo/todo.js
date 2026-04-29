@@ -1,66 +1,63 @@
-const fs = require('fs');
-const filePath = './tasks.json';
+const fs = require("fs");
+const filePath = "./tasks.json";
 
-
-const loadTask = ()=>{
-    try {
-      // readFileSync returns a Buffer (raw binary data, often shown in hex)
-      const dataBuffer = fs.readFileSync(filePath);
-      // convert Buffer → string (readable JSON text)
-      const dataJSON = dataBuffer.toString();
-      // convert JSON string → real JavaScript array/object
-      return JSON.parse(dataJSON);
-    } catch (error) {
-        return []
-    }
-}
+const loadTask = () => {
+  try {
+    // readFileSync returns a Buffer (raw binary data, often shown in hex)
+    const dataBuffer = fs.readFileSync(filePath);
+    // convert Buffer → string (readable JSON text)
+    const dataJSON = dataBuffer.toString();
+    // convert JSON string → real JavaScript array/object
+    return JSON.parse(dataJSON);
+  } catch (error) {
+    return [];
+  }
+};
 
 const saveTask = (tasks) => {
   const dataJSON = JSON.stringify(tasks);
-  fs.writeFileSync(filePath,dataJSON);
+  fs.writeFileSync(filePath, dataJSON);
 };
 
-const addTask = (task) =>{
-   const tasks = loadTask();
-   tasks.push({task});
-   saveTask(tasks)
-   console.log('task added', task);
-}
-
-const listTask = ()=>{
+const addTask = (task) => {
   const tasks = loadTask();
-  tasks.forEach((task,index)=> console.log(`${index +1} - ${task.task}`)
-  )
-}
+  tasks.push({ task });
+  saveTask(tasks);
+  console.log("task added", task);
+};
 
-const removeTask = (index) =>{
-    const tasks = loadTask();
+const listTask = () => {
+  const tasks = loadTask();
+  tasks.forEach((task, index) => console.log(`${index + 1} - ${task.task}`));
+};
 
-    const realIndex = index -1;
-    
-    if (realIndex < 0 || realIndex >= tasks.length) {
-        console.log('invalid task number');
-        return
-    }
+const removeTask = (index) => {
+  const tasks = loadTask();
 
-    const remove = tasks.splice(realIndex,1);
-    saveTask(tasks);
+  const realIndex = index - 1;
 
-    console.log('Removed',remove[0].task);
-    
-}
+  if (realIndex < 0 || realIndex >= tasks.length) {
+    console.log("invalid task number");
+    return;
+  }
+
+  const remove = tasks.splice(realIndex, 1);
+  saveTask(tasks);
+
+  console.log("Removed", remove[0].task);
+};
 
 // const command = process.argv[2]
 // const argument = process.argv[3];
 
 const [, , command, argument] = process.argv;
 
-if (command === 'add') {
-    addTask(argument)
-} else if (command === 'list') {
-    listTask()
-}else if(command === 'remove'){
-    removeTask(parseInt(argument));
-}else{
-    console.log("Command not found!");
+if (command === "add") {
+  addTask(argument);
+} else if (command === "list") {
+  listTask();
+} else if (command === "remove") {
+  removeTask(parseInt(argument));
+} else {
+  console.log("Command not found!");
 }
