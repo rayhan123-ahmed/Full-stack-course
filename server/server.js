@@ -13,21 +13,22 @@ const server = http.createServer((req,res)=>{
     const extName = String(path.extname(filePath)).toLowerCase();
     
     const mimeTypes = {
-        '.html': 'text/html',
-        '.css': 'text/css',
-        '.js': 'text/javascript',
-        '.png': 'png/png',
-    }
-    const contentType = mimeTypes[extName] || 'apllication/octet-stream'
+      ".html": "text/html",
+      ".css": "text/css",
+      ".js": "text/javascript",
+      ".png": "image/png",
+    };
+    const contentType = mimeTypes[extName] || "application/octet-stream";
      
 
     fs.readFile(filePath,(req,content)=>{
-        if (error) {
+        if (err) {
              if (error.code === 'ENOENT') {
                 res.writeHead(400,{'Content-Type': 'text/html'})
+                res.end('404 file not founded broo')
              }
         } else {
-            res.writeHead(200, ("Content-Type", contentType));
+            res.writeHead(200, {"Content-Type":contentType});
             res.end(content, 'utf-8');
         }
     })
