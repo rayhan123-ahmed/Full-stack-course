@@ -2,7 +2,6 @@ const http = require('http')
 const fs = require('fs');
 const path = require('path');
 const { url } = require('inspector');
-const { error } = require('console');
 
 
 const port = 3000;
@@ -21,17 +20,17 @@ const server = http.createServer((req,res)=>{
     const contentType = mimeTypes[extName] || "application/octet-stream";
      
 
-    fs.readFile(filePath,(req,content)=>{
-        if (err) {
-             if (error.code === 'ENOENT') {
-                res.writeHead(400,{'Content-Type': 'text/html'})
-                res.end('404 file not founded broo')
-             }
-        } else {
-            res.writeHead(200, {"Content-Type":contentType});
-            res.end(content, 'utf-8');
+    fs.readFile(filePath, (err, content) => {
+      if (err) {
+        if (err.code === "ENOENT") {
+          res.writeHead(400, { "Content-Type": "text/html" });
+          res.end("404 file not founded broo");
         }
-    })
+      } else {
+        res.writeHead(200, { "Content-Type": contentType });
+        res.end(content, "utf-8");
+      }
+    });
 });
 
 
