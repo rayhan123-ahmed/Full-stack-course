@@ -1,13 +1,37 @@
-const fs = require('fs');
-const os = require('os');
-const eventEmitter = require('events');
+const fs = require("fs");
+const os = require("os");
 
-class logger extends eventEmitter {
-  log(massage) {
-    this.emit("massage", { massage });
+const EventEmitter = require("events");
+
+class Logger extends EventEmitter {
+  log(message) {
+    this.emit("message", { message });
   }
 }
 
-const logger = new logger()
-const logFile = './eventlog.text';
+const logger = new Logger();
+const logFile = "./event.txt";
 
+const logToFile = (event) => {
+  const logMessage = `${new Date().toISOString()} - ${event.message} "\n"`;
+  fs.appendFileSync(logFile, logMessage, (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
+  fs.appendFile(logFile, logMessage, (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
+};
+
+logger.on("message", logToFile);
+
+setInterval(() => {
+  const memoryUsage = (os.freemem() / os.totalmem()) * 100;
+  logger.log(`current memory usage: ${memoryUsage.toFixed(2)}%`);
+}, 3000);
+
+logger.log("application has been started");
+logger.log("application event occured");
